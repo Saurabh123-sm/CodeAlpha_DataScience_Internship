@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CodeAlpha Data Science</title>
+<style>
+  :root { --accent:#4c72b0; --bg:#f7f8fa; --card:#fff; --text:#222; --muted:#666; --radius:10px; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  header { background:var(--accent); color:#fff; padding:2rem 1.5rem; text-align:center; }
+  header h1 { font-size:1.8rem; margin-bottom:.3rem; }
+  header p { opacity:.85; font-size:1rem; }
+  nav { display:flex; justify-content:center; gap:.5rem; padding:1rem; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.08); flex-wrap:wrap; }
+  nav a { padding:.5rem 1.2rem; border-radius:8px; text-decoration:none; color:var(--text); font-weight:500; transition:background .2s; }
+  nav a:hover { background:#eef; }
+  nav a.active { background:var(--accent); color:#fff; }
+  main { max-width:1000px; margin:1.5rem auto; padding:0 1rem; }
+  .card { background:var(--card); border-radius:var(--radius); padding:1.5rem; margin-bottom:1.5rem; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+  .card h2 { color:var(--accent); margin-bottom:.8rem; font-size:1.3rem; }
+  .card h3 { margin:1rem 0 .5rem; font-size:1.05rem; }
+  .card p, .card li { margin-bottom:.5rem; }
+  .card ul { margin-left:1.5rem; }
+  .warn { color:#c44e52; }
+  .data-table { border-collapse:collapse; width:100%; margin:.5rem 0; }
+  .data-table th, .data-table td { padding:.5rem .8rem; text-align:center; border-bottom:1px solid #eee; }
+  .data-table th { background:#f0f2f6; font-weight:600; }
+  .data-table tr:hover { background:#f8f9ff; }
+  .plots { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0; }
+  .plots img { width:100%; border-radius:8px; border:1px solid #eee; }
+  .full-plot img { width:70%; max-width:500px; display:block; margin:0 auto; border-radius:8px; border:1px solid #eee; }
+  .btn { display:inline-block; padding:.6rem 1.4rem; background:var(--accent); color:#fff; border:none; border-radius:8px; font-size:1rem; cursor:pointer; text-decoration:none; }
+  .btn:hover { opacity:.9; }
+  pre { background:#1e1e2e; color:#cdd6f4; padding:1rem; border-radius:8px; overflow-x:auto; font-size:.85rem; margin:1rem 0; white-space:pre-wrap; }
+  footer { text-align:center; padding:1.5rem; color:var(--muted); font-size:.85rem; }
+  @media(max-width:640px){ .plots{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>📊 CodeAlpha Data Science Internship</h1>
+  <p>Two machine-learning tasks — explore results and re-run analyses live</p>
+</header>
+<nav>
+  <a href="/" class="{{'active' if task=='1' else ''}}">🌸 Task 1: Iris Classification</a>
+  <a href="/task4" class="{{'active' if task=='4' else ''}}">📈 Task 4: Sales Prediction</a>
+</nav>
+<main>
+  {% block content %}{% endblock %}
+</main>
+<footer>CodeAlpha Data Science Internship • Tasks 1 &amp; 4</footer>
+</body>
+</html>
